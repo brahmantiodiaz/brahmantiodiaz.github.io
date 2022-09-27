@@ -1,1 +1,1 @@
-console.log("wkwkwkdakdawkdaw");
+console.log(visitData.get());
