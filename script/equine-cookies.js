@@ -1,3 +1,1 @@
-window.addEventListener("load", (event) => {
-  console.log("test woy anjay");
-});
+console.log("test woy anjay");
