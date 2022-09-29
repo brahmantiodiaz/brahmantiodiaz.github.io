@@ -6,8 +6,24 @@ var marqueeInitialized = 0;
 
 $(document).ready(function ($) {
   "use strict";
+  // $(".subsidiaries").hover(
+  //   function () {
+  //     $(this).addClass("hover-txt");
+  //   },
+  //   function () {
+  //     $(this).removeClass("hover");
+  //   }
+  // );
 
   //hover in mobile
+  let textHover = document.getElementsByClassName("subsidiaries")[0];
+  textHover.addEventListener("touchstart", function () {
+    textHover.addClass("hoverBlue");
+  });
+
+  textHover.addEventListener("touchend", function () {
+    textHover.removeClass("hoverBlue");
+  });
 
   $("body").imagesLoaded(function () {
     $("body").addClass("loading-done");
