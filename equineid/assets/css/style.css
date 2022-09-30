@@ -2333,6 +2333,7 @@ E. Template Specific Elements
     top: .625rem;
     right: 3.125rem;
     z-index: 1;
+    cursor: pointer;
 }
 
 /* NEW */
