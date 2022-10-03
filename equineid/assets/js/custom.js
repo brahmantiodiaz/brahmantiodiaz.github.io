@@ -16,14 +16,15 @@ $(document).ready(function ($) {
   // );
 
   //hover in mobile
-  let textHover = document.getElementsByClassName("subsidiaries")[0];
-  textHover.addEventListener("touchstart", function () {
-    textHover.addClass("hoverBlue");
-  });
-
-  textHover.addEventListener("touchend", function () {
-    textHover.removeClass("hoverBlue");
-  });
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    let text = $(".txt-hover");
+    text.removeClass("txt-style");
+    text.addClass("txt-mobile");
+    text.on("touchstart", function () {
+      alert("hello");
+    }); // this might work for you
+  } else {
+  }
 
   $("body").imagesLoaded(function () {
     $("body").addClass("loading-done");

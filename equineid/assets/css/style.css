@@ -96,16 +96,20 @@ body {
     /* overflow: hidden; */
 }
 
-.hoverBlue{
+.hoverMobile{
     color: rgb(0, 201, 238) !important;
 }
 
-.subsidiaries{
+.txt-mobile{
+    color:white !important;
+}
+
+.txt-style{
     color:white !important;
 }
 
 
-.subsidiaries:hover{
+.txt-style:hover{
     color: rgb(0, 201, 238) !important;
 }
 
