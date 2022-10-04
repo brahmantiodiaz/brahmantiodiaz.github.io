@@ -24,6 +24,9 @@ $(document).ready(function ($) {
       box[i].addEventListener("click", function () {
         window.location = this.href;
       });
+      box[i].addEventListener("touchstart", function () {
+        box[i].classList.add("hover-mobile");
+      });
       box[i].addEventListener("touchmove", function () {
         box[i].classList.add("hover-mobile");
       });
