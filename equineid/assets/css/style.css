@@ -1684,6 +1684,12 @@ body.has-loading-screen.loading-done:after {
     .col-lg{
         padding-bottom: 20px;
     }
+
+    .icon-box{
+        border-style: solid;
+        height: 100%;
+        padding: 5px 5px 5px 5px;
+      }
     
  }
 
@@ -1698,6 +1704,12 @@ body.has-loading-screen.loading-done:after {
         margin-right: auto !important;
         display: block; 
     }
+    
+    .icon-box{
+        border-style: solid;
+        height: 100%;
+        padding: 5px 5px 5px 5px;
+      }
     
  }
   
@@ -2806,11 +2818,7 @@ E. Template Specific Elements
     }
   }
 
-  .icon-box{
-    border-style: solid;
-    height: 100%;
-    padding: 5px 5px 5px 5px;
-  }
+
 
   .hover-mobile{
     background-color: rgba(0,212,255,0.6);
