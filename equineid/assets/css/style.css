@@ -1674,6 +1674,30 @@ body.has-loading-screen.loading-done:after {
         margin-bottom: 0 !important;
         display: none;
     }
+    .icon-box img {
+        max-width: 40% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block; 
+    }
+
+    .col-lg{
+        padding-bottom: 20px;
+    }
+    
+ }
+
+ @media screen and (min-width: 767px) and (max-width:992px){
+    .col-lg{
+        padding-bottom: 20px;
+    }
+
+    .icon-box img {
+        max-width: 30%!important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        display: block; 
+    }
     
  }
   
@@ -1684,7 +1708,6 @@ body.has-loading-screen.loading-done:after {
     }
  } */
   
-
 
 
 
@@ -2532,7 +2555,7 @@ E. Template Specific Elements
 
     .ts-side-panel {
         padding: 1.75rem;
-        width: 60%;
+        /* width: 60%; */
     }
 }
 
@@ -2783,12 +2806,24 @@ E. Template Specific Elements
     }
   }
 
+  .icon-box{
+    border-style: solid;
+    height: 100%;
+    padding: 5px 5px 5px 5px;
+  }
+
+  .hover-mobile{
+    background-color: rgba(0,212,255,0.6);
+    opacity: 0.8;
+  }
+
   .icon-box img {
     margin-left: 25%;
     margin-right: 25%;
     color: #f6b024;
     line-height: 0;
   }
+
   .icon-box h4 {
     font-weight: 700;
     margin-bottom: 15px;

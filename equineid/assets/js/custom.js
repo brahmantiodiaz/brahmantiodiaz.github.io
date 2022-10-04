@@ -16,13 +16,21 @@ $(document).ready(function ($) {
   // );
 
   //hover in mobile
-  if (window.matchMedia("(max-width: 767px)").matches) {
-    let text = $(".txt-hover");
-    text.removeClass("txt-style");
-    text.addClass("txt-mobile");
-    text.on("touchstart", function () {
-      alert("hello");
-    }); // this might work for you
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    let box = document.getElementsByClassName("icon-box");
+
+    console.log(box);
+    for (let i = 0; i < box.length; i++) {
+      box[i].addEventListener("click", function () {
+        window.location = this.href;
+      });
+      box[i].addEventListener("touchmove", function () {
+        box[i].classList.add("hover-mobile");
+      });
+      box[i].addEventListener("touchend", function () {
+        box[i].classList.remove("hover-mobile");
+      });
+    }
   } else {
   }
 
