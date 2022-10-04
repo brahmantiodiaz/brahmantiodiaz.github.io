@@ -18,9 +18,11 @@ $(document).ready(function ($) {
   //hover in mobile
   if (window.matchMedia("(max-width: 992px)").matches) {
     let box = document.getElementsByClassName("icon-box");
-
+    let txt = document.getElementsByClassName("txt-hover");
     console.log(box);
     for (let i = 0; i < box.length; i++) {
+      txt[i].classList.add("txt-mobile");
+      txt[i].classList.remove("txt-style");
       box[i].addEventListener("click", function () {
         window.location = this.href;
       });
