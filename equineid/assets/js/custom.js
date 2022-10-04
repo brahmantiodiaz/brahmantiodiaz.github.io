@@ -24,7 +24,7 @@ $(document).ready(function ($) {
       txt[i].classList.add("txt-mobile");
       txt[i].classList.remove("txt-style");
       box[i].addEventListener("click", function () {
-        window.location = this.href;
+        window.location = $(".icon-box").data("href");
       });
       box[i].addEventListener("touchstart", function () {
         box[i].classList.add("hover-mobile");
