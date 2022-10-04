@@ -1682,7 +1682,7 @@ body.has-loading-screen.loading-done:after {
     }
 
     .icon-box{
-        border: 2px solid;
+        border: 1px solid;
         height: 100%;
         padding: 10px 10px 10px 10px;
         border-color: #C0C0C0;
