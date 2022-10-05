@@ -63,9 +63,9 @@ $(document).ready(function ($) {
 
   $(".ts-open-side-panel").on("click", function () {
     // $("body").css("overflow-y", "hidden");
-    $(".site-footer").hide();
     setTimeout(() => {
       $(".ts-page-wrapper").hide();
+      $(".site-footer").hide();
     }, 1000);
     $(".ts-side-panel").show();
     $("body").toggleClass("ts-side-panel-active");
