@@ -20,24 +20,24 @@ $(document).ready(function ($) {
     let box = document.getElementsByClassName("icon-box");
     let txt = document.getElementsByClassName("txt-hover");
     const body = document.getElementsByTagName("body");
-    if (body[0].classList.contains("ts-side-panel-active")) {
-      console.log(box);
-      for (let i = 0; i < box.length; i++) {
-        txt[i].classList.add("txt-mobile");
-        txt[i].classList.remove("txt-style");
-        box[i].addEventListener("click", function () {
-          window.location = $(".icon-box").data("href");
-        });
-        box[i].addEventListener("touchstart", function () {
-          box[i].classList.add("hover-mobile");
-        });
-        box[i].addEventListener("touchmove", function () {
-          box[i].classList.add("hover-mobile");
-        });
-        box[i].addEventListener("touchend", function () {
-          box[i].classList.remove("hover-mobile");
-        });
-      }
+    // if (body[0].classList.contains("ts-side-panel-active")) {
+    console.log(box);
+    for (let i = 0; i < box.length; i++) {
+      txt[i].classList.add("txt-mobile");
+      txt[i].classList.remove("txt-style");
+      box[i].addEventListener("click", function () {
+        window.location = $(".icon-box").data("href");
+      });
+      box[i].addEventListener("touchstart", function () {
+        box[i].classList.add("hover-mobile");
+      });
+      box[i].addEventListener("touchmove", function () {
+        box[i].classList.add("hover-mobile");
+      });
+      box[i].addEventListener("touchend", function () {
+        box[i].classList.remove("hover-mobile");
+      });
+      // }
     }
   } else {
   }
@@ -69,6 +69,32 @@ $(document).ready(function ($) {
     }, 1000);
     $(".ts-side-panel").show();
     $("body").toggleClass("ts-side-panel-active");
+    //hover in mobile
+    if (window.matchMedia("(max-width: 992px)").matches) {
+      let box = document.getElementsByClassName("icon-box");
+      let txt = document.getElementsByClassName("txt-hover");
+      const body = document.getElementsByTagName("body");
+      // if (body[0].classList.contains("ts-side-panel-active")) {
+      console.log(box);
+      for (let i = 0; i < box.length; i++) {
+        txt[i].classList.add("txt-mobile");
+        txt[i].classList.remove("txt-style");
+        box[i].addEventListener("click", function () {
+          window.location = $(".icon-box").data("href");
+        });
+        box[i].addEventListener("touchstart", function () {
+          box[i].classList.add("hover-mobile");
+        });
+        box[i].addEventListener("touchmove", function () {
+          box[i].classList.add("hover-mobile");
+        });
+        box[i].addEventListener("touchend", function () {
+          box[i].classList.remove("hover-mobile");
+        });
+        // }
+      }
+    } else {
+    }
   });
 
   $(".ts-close-side-panel").on("click", function () {
