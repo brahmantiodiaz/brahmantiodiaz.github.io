@@ -1,5 +1,5 @@
 console.log(visitData.get());
-console.log(document.cookie);
+// console.log(document.cookie);
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -16,3 +16,6 @@ function getCookie(cname) {
   return "";
 }
 console.log(getCookie("_ga_6QBT1DNHZ6"));
+let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
+let ga_session_id = tmpID[2];
+console.log(ga_session_id);
