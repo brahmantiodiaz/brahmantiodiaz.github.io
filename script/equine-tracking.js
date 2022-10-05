@@ -12,6 +12,7 @@ window.addEventListener("load", (event) => {
   const formSAP = document.getElementById("formSAP");
   const requestDemoForm = document.getElementById("requestDemoForm");
   let dataSouce = visitData.get();
+  let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
 
   userActivity();
 
@@ -74,6 +75,7 @@ window.addEventListener("load", (event) => {
     formData.append("Provider", dataIP.org);
     formData.append("source", dataSouce.source);
     formData.append("medium", dataSouce.medium);
+    formData.append("ga_session_id", tmpID[2]);
     await sendToSheet(scriptURL, formData);
   }
   // do something when copy
@@ -123,6 +125,7 @@ window.addEventListener("load", (event) => {
       pageTitle: document.title,
       device: WURFL.form_factor,
       fullDeviceName: WURFL.complete_device_name,
+      ga_session_id: tmpID[2],
       source: dataSouce.source,
       medium: dataSouce.medium,
       Provider: dataIP.org,
@@ -165,6 +168,7 @@ window.addEventListener("load", (event) => {
       source: dataSouce.source,
       medium: dataSouce.medium,
       Provider: dataIP.org,
+      ga_session_id: tmpID[2],
     };
     console.log(data);
     //test
@@ -288,6 +292,7 @@ window.addEventListener("load", (event) => {
         source: dataSouce.source,
         medium: dataSouce.medium,
         Provider: dataIP.org,
+        ga_session_id: tmpID[2],
       };
       // //test
       const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
@@ -327,6 +332,7 @@ window.addEventListener("load", (event) => {
         source: dataSouce.source,
         medium: dataSouce.medium,
         Provider: dataIP.org,
+        ga_session_id: tmpID[2],
       };
       //test
       const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
@@ -354,7 +360,6 @@ window.addEventListener("load", (event) => {
   async function userActivity() {
     let urlSlug =
       "AKfycbxoiVlNqKrl9Cg0j0DSEBXs4zDwkUeTacFuCi6IZeIof_t1QIewk7yFOkCpEkk-vXQdSA/exec";
-    let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
     let data = {
       event: "page_view",
       pageTitle: document.title,
