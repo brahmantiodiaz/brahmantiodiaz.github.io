@@ -1684,9 +1684,9 @@ body.has-loading-screen.loading-done:after {
     .icon-box{
         border: 1px solid;
         height: 100%;
-        padding: 10px 10px 10px 10px;
+        padding: 20px 20px 20px 20px;
         border-color: #C0C0C0;
-        border-radius: 25px;
+        border-radius: 10px;
       }
     
  }
@@ -1706,10 +1706,10 @@ body.has-loading-screen.loading-done:after {
     .icon-box{
         border: 1px solid;
         height: 100%;
-        padding: 10px 10px 10px 10px;
+        padding: 20px 20px 20px 20px;
         border-color: #C0C0C0;
         /* border: 1px solid rgba(255, 0, 0, .5); */
-        border-radius: 25px;
+        border-radius: 10px;
         
       }
     
