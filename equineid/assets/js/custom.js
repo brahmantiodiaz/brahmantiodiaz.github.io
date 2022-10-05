@@ -20,7 +20,7 @@ $(document).ready(function ($) {
     let box = document.getElementsByClassName("icon-box");
     let txt = document.getElementsByClassName("txt-hover");
     const body = document.getElementsByTagName("body");
-    if (body.classList.contains("ts-side-panel-active")) {
+    if (body[0].classList.contains("ts-side-panel-active")) {
       console.log(box);
       for (let i = 0; i < box.length; i++) {
         txt[i].classList.add("txt-mobile");
