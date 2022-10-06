@@ -12,7 +12,11 @@ window.addEventListener("load", (event) => {
   const formSAP = document.getElementById("formSAP");
   const requestDemoForm = document.getElementById("requestDemoForm");
   let dataSouce = visitData.get();
+  let isAdmin = getCookie("name");
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
+  if (isAdmin) {
+    tmpID = undefined;
+  }
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
     FRUBIL.device.brand +
