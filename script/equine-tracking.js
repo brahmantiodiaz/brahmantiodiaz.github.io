@@ -15,8 +15,8 @@ window.addEventListener("load", (event) => {
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
-    FRUBIL.client.marketname + " using " + FRUBIL.client.name;
-  if (!FRUBIL.client.marketname) {
+    FRUBIL.device.marketname + " using " + FRUBIL.client.name;
+  if (!FRUBIL.device.marketname) {
     fullDeviceName = FRUBIL.client.os;
   }
 
