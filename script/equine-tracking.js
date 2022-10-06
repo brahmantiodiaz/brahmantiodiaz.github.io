@@ -16,7 +16,7 @@ window.addEventListener("load", (event) => {
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
     FRUBIL.client.marketname + " using " + FRUBIL.client.name;
-  if (FRUBIL.client.marketname == undefined) {
+  if (!FRUBIL.client.marketname) {
     fullDeviceName = FRUBIL.client.os;
   }
 
