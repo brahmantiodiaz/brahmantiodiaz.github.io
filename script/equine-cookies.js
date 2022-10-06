@@ -23,3 +23,4 @@
 console.log(FRUBIL.device.class);
 console.log(FRUBIL.client);
 console.log(FRUBIL.device);
+console.log(FRUBIL);
