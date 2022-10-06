@@ -13,12 +13,9 @@ window.addEventListener("load", (event) => {
   const requestDemoForm = document.getElementById("requestDemoForm");
   let dataSouce = visitData.get();
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
-  let device = WURFL.form_factor
-    ? WURFL.form_factor
-    : FRUBIL.device.class + FRUBIL.client.os;
-  let fullDeviceName = WURFL.complete_device_name
-    ? WURFL.complete_device_name
-    : FRUBIL.client.marketname + " using " + FRUBIL.client.name;
+  let device = FRUBIL.device.class + FRUBIL.client.os;
+  let fullDeviceName =
+    FRUBIL.client.marketname + " using " + FRUBIL.client.name;
 
   userActivity();
 
