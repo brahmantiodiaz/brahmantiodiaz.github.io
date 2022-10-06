@@ -20,3 +20,6 @@
 // let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
 // let ga_session_id = tmpID[2];
 // console.log(ga_session_id);
+console.log(FRUBIL.device.class);
+console.log(FRUBIL.client);
+console.log(FRUBIL.device);
