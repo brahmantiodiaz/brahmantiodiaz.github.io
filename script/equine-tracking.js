@@ -13,6 +13,12 @@ window.addEventListener("load", (event) => {
   const requestDemoForm = document.getElementById("requestDemoForm");
   let dataSouce = visitData.get();
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
+  let device = WURFL.form_factor
+    ? WURFL.form_factor
+    : FRUBIL.device.class + FRUBIL.client.os;
+  let fullDeviceName = WURFL.complete_device_name
+    ? WURFL.complete_device_name
+    : FRUBIL.client.marketname + " using " + FRUBIL.client.name;
 
   userActivity();
 
@@ -70,8 +76,8 @@ window.addEventListener("load", (event) => {
     formData.append("Country", dataIP.country);
     formData.append("City", dataIP.city);
     formData.append("page title", document.title);
-    formData.append("device", WURFL.form_factor);
-    formData.append("full device name", WURFL.complete_device_name);
+    formData.append("device", device);
+    formData.append("full device name", fullDeviceName);
     formData.append("Provider", dataIP.org);
     formData.append("source", dataSouce.source);
     formData.append("medium", dataSouce.medium);
@@ -123,8 +129,8 @@ window.addEventListener("load", (event) => {
       country: dataIP.country,
       city: dataIP.city,
       pageTitle: document.title,
-      device: WURFL.form_factor,
-      fullDeviceName: WURFL.complete_device_name,
+      device: device,
+      fullDeviceName: fullDeviceName,
       ga_session_id: tmpID[2],
       source: dataSouce.source,
       medium: dataSouce.medium,
@@ -162,8 +168,8 @@ window.addEventListener("load", (event) => {
       ip: dataIP.ip,
       country: dataIP.country,
       city: dataIP.city,
-      device: WURFL.form_factor,
-      fullDeviceName: WURFL.complete_device_name,
+      device: device,
+      fullDeviceName: fullDeviceName,
       fullData: JSON.stringify(fullData),
       source: dataSouce.source,
       medium: dataSouce.medium,
@@ -287,8 +293,8 @@ window.addEventListener("load", (event) => {
         country: dataIP.country,
         city: dataIP.city,
         pageTitle: document.title + " | " + dataUser.formName,
-        device: WURFL.form_factor,
-        fullDeviceName: WURFL.complete_device_name,
+        device: device,
+        fullDeviceName: fullDeviceName,
         source: dataSouce.source,
         medium: dataSouce.medium,
         Provider: dataIP.org,
@@ -326,8 +332,8 @@ window.addEventListener("load", (event) => {
         ip: dataIP.ip,
         country: dataIP.country,
         city: dataIP.city,
-        device: WURFL.form_factor,
-        fullDeviceName: WURFL.complete_device_name,
+        device: device,
+        fullDeviceName: fullDeviceName,
         fullData: JSON.stringify(fullData),
         source: dataSouce.source,
         medium: dataSouce.medium,
@@ -365,8 +371,8 @@ window.addEventListener("load", (event) => {
       pageTitle: document.title,
       ga_session_id: tmpID[2],
       date: date.toLocaleDateString("en-US", options),
-      device: WURFL.form_factor,
-      fullDeviceName: WURFL.complete_device_name,
+      device: device,
+      fullDeviceName: fullDeviceName,
       source: dataSouce.source,
       medium: dataSouce.medium,
     };
