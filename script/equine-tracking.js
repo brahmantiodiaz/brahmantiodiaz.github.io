@@ -25,7 +25,7 @@ window.addEventListener("load", (event) => {
     " using " +
     FRUBIL.client.name;
   if (!FRUBIL.device.marketname) {
-    fullDeviceName = FRUBIL.client.os;
+    fullDeviceName = FRUBIL.client.os + " using " + FRUBIL.client.name;
   }
 
   userActivity();
