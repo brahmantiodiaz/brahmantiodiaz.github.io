@@ -26,7 +26,7 @@ window.addEventListener("load", (event) => {
   }
 
   if (isAdmin) {
-    // tmpID = isAdmin;
+    tmpID = ["admin", "admin", isAdmin];
     console.log(isAdmin);
   }
 
