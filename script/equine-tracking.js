@@ -14,9 +14,6 @@ window.addEventListener("load", (event) => {
   let dataSouce = visitData.get();
   let isAdmin = getCookie("name");
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
-  if (isAdmin) {
-    tmpID = undefined;
-  }
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
     FRUBIL.device.brand +
@@ -26,6 +23,11 @@ window.addEventListener("load", (event) => {
     FRUBIL.client.name;
   if (!FRUBIL.device.marketname) {
     fullDeviceName = FRUBIL.client.os + " using " + FRUBIL.client.name;
+  }
+
+  if (isAdmin) {
+    tmpID = undefined;
+    console.log(isAdmin);
   }
 
   userActivity();
