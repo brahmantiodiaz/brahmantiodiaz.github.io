@@ -26,7 +26,7 @@ window.addEventListener("load", (event) => {
   }
 
   if (isAdmin) {
-    tmpID = isAdmin;
+    // tmpID = isAdmin;
     console.log(isAdmin);
   }
 
