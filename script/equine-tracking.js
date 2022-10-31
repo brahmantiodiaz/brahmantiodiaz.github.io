@@ -376,6 +376,7 @@ window.addEventListener("load", (event) => {
   async function userActivity() {
     let urlSlug =
       "AKfycbxoiVlNqKrl9Cg0j0DSEBXs4zDwkUeTacFuCi6IZeIof_t1QIewk7yFOkCpEkk-vXQdSA/exec";
+    let dataIP = await getIp();
     let data = {
       event: "page_view",
       pageTitle: document.title,
@@ -385,6 +386,7 @@ window.addEventListener("load", (event) => {
       fullDeviceName: fullDeviceName,
       source: dataSouce.source,
       medium: dataSouce.medium,
+      ip: dataIP.ip,
     };
     const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
     let formData = new FormData();
