@@ -11,7 +11,12 @@ window.addEventListener("load", (event) => {
   const formBlockchain = document.getElementById("formBlockchain");
   const formSAP = document.getElementById("formSAP");
   const requestDemoForm = document.getElementById("requestDemoForm");
-  let dataSouce = visitData.get();
+  let dataSouce;
+  try {
+    dataSouce = visitData.get();
+  } catch (error) {
+    dataSouce = { source: "direct", medium: "none" };
+  }
   let isAdmin = getCookie("name");
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
