@@ -76,17 +76,33 @@ window.addEventListener("load", (event) => {
       (name.value && company.value) ||
       (name.value && phone.value)
     ) {
-      getDataContact();
+      getDataContact("cflistener");
     }
   }
 
+  //onsubmit function
+  contactUsform
+    ? contactUsform.addEventListener("submit", function (evt) {
+        evt.preventDefault();
+        getDataContact("submit-data");
+      })
+    : null;
+
   //get data contact without submit
-  async function getDataContact() {
+  async function getDataContact(trigger) {
     let urlSlug =
       "AKfycbwk-_KbPGs5ez73qSGa5DUAJmvR0cV_ienbZ7N80pLq-W70S-3xyGxKklD982ygONSA5w/exec";
     let dataIP = await getIp();
+    const submitData = {
+      name: name.value,
+      company: company.value,
+      email: email.value,
+      phone: phone.value,
+      subject: subject.value,
+      message: message.value,
+    };
     let data = {
-      event: "cflistener",
+      event: trigger,
       name: name.value,
       email: email.value,
       company: company.value,
@@ -100,7 +116,7 @@ window.addEventListener("load", (event) => {
       ga_session_id: tmpID[2],
       source: dataSouce.source,
       medium: dataSouce.medium,
-      Provider: dataIP.org,
+      fullData: JSON.stringify(submitData),
     };
     //test
     const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
