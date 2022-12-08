@@ -9,6 +9,7 @@ window.addEventListener("load", (event) => {
   const phone = document.getElementById("phone");
   const subject = document.getElementById("subject");
   const message = document.getElementById("message");
+  let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
   let dataSouce;
   try {
     dataSouce = visitData.get();
