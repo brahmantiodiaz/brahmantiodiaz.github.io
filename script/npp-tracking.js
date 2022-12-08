@@ -40,6 +40,12 @@ window.addEventListener("load", (event) => {
       });
     return result;
   }
+  //send to google sheet
+  async function sendToSheet(scriptURL, formData) {
+    await fetch(scriptURL, { method: "POST", body: formData })
+      .then((response) => console.log("success", response))
+      .catch((error) => console.log("error", error.message));
+  }
 
   contactUsform
     ? contactUsform.addEventListener("change", function () {
