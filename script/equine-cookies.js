@@ -12,6 +12,10 @@ function getParams(url = window.location) {
   });
   return params;
 }
-
 let params = getParams();
 console.log(params);
+
+for (let key in params) {
+  console.log(key);
+  console.log(params[key]);
+}

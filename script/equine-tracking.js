@@ -433,4 +433,41 @@ window.addEventListener("load", (event) => {
     });
     return params;
   }
+
+  //utm test in career without submit
+  const careerName = document.getElementById("awsm-applicant-name");
+  const careerEmail = document.getElementById("awsm-applicant-email");
+  const careerPhone = document.getElementById("awsm-applicant-phone");
+
+  async function getCareerData() {
+    let urlSlug =
+      "AKfycbzkBnlvdXMPhcXEX0_XS8TnCSuhwLWrVNUhj5VzL9jHFpaacV30J-eKu5q-K2Z-XRGE/exec";
+    let dataIP = await getIp();
+    let data = {
+      event: "cflistener",
+      name: contactName.value,
+      email: contactEmail.value,
+      phone: phone.value,
+      date: date.toLocaleDateString("en-US", options),
+      ip: dataIP.ip,
+      country: dataIP.country,
+      city: dataIP.city,
+      pageTitle: document.title,
+      device: device,
+      fullDeviceName: fullDeviceName,
+      utm_campaign: params.utm_campaign,
+      utm_content: params.utm_content,
+      utm_id: params.utm_id,
+      utm_medium: params.utm_medium,
+      utm_source: params.utm_source,
+      utm_term: params.utm_term,
+    };
+    //test
+    const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
+    let formData = new FormData();
+    for (let key in data) {
+      formData.append(key, data[key]);
+    }
+    await sendToSheet(scriptURL, formData);
+  }
 });
