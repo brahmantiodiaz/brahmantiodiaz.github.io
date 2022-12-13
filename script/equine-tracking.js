@@ -1,5 +1,11 @@
 window.addEventListener("load", (event) => {
   let params = getParams();
+  if (params) {
+    console.log(params);
+    for (let key in params) {
+      setCookie(key, params[key], 1);
+    }
+  }
   const contactUsform = document.getElementById("contactUsForm");
   let date = new Date();
   const tokenIpInfo = "2fcc5a1ed7a755";
@@ -438,6 +444,23 @@ window.addEventListener("load", (event) => {
   const careerName = document.getElementById("awsm-applicant-name");
   const careerEmail = document.getElementById("awsm-applicant-email");
   const careerPhone = document.getElementById("awsm-applicant-phone");
+  const careerForm = document.getElementById("awsm-application-form");
+
+  careerForm
+    ? careerForm.addEventListener("change", function () {
+        checkInputCareer();
+      })
+    : null;
+
+  //check input condition
+  function checkInputCareer() {
+    if (
+      (careerName.value && careerEmail.value) ||
+      (careerName.value && careerPhone.value)
+    ) {
+      getCareerData();
+    }
+  }
 
   async function getCareerData() {
     let urlSlug =
@@ -445,9 +468,9 @@ window.addEventListener("load", (event) => {
     let dataIP = await getIp();
     let data = {
       event: "cflistener",
-      name: contactName.value,
-      email: contactEmail.value,
-      phone: phone.value,
+      name: careerName.value,
+      email: careerEmail.value,
+      phone: careerPhone.value,
       date: date.toLocaleDateString("en-US", options),
       ip: dataIP.ip,
       country: dataIP.country,
@@ -455,12 +478,18 @@ window.addEventListener("load", (event) => {
       pageTitle: document.title,
       device: device,
       fullDeviceName: fullDeviceName,
-      utm_campaign: params.utm_campaign,
-      utm_content: params.utm_content,
-      utm_id: params.utm_id,
-      utm_medium: params.utm_medium,
-      utm_source: params.utm_source,
-      utm_term: params.utm_term,
+      utm_campaign: getCookie("utm_campaign")
+        ? getCookie("utm_campaign")
+        : null,
+      utm_content: getCookie("utm_content") ? getCookie("utm_content") : null,
+      utm_id: getCookie("utm_id") ? getCookie("utm_id") : null,
+      utm_medium: getCookie("utm_medium")
+        ? getCookie("utm_medium")
+        : dataSouce.medium,
+      utm_source: getCookie("utm_source")
+        ? getCookie("utm_source")
+        : dataSouce.source,
+      utm_term: getCookie("utm_term") ? getCookie("utm_term") : null,
     };
     //test
     const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
