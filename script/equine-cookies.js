@@ -16,6 +16,13 @@ let params = getParams();
 console.log(params);
 
 for (let key in params) {
-  console.log(key);
-  console.log(params[key]);
+  setCookie(key, params[key], 1);
+}
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+  let expires = "expires=" + d.toUTCString();
+  console.log(expires);
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
