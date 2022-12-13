@@ -1,4 +1,5 @@
 window.addEventListener("load", (event) => {
+  let params = getParams();
   const contactUsform = document.getElementById("contactUsForm");
   let date = new Date();
   const tokenIpInfo = "2fcc5a1ed7a755";
@@ -415,5 +416,21 @@ window.addEventListener("load", (event) => {
       }
     }
     return "";
+  }
+
+  //function to getparams
+  function getParams(url = window.location) {
+    let params = {};
+    new URL(url).searchParams.forEach(function (val, key) {
+      if (params[key] !== undefined) {
+        if (!Array.isArray(params[key])) {
+          params[key] = [params[key]];
+        }
+        params[key].push(val);
+      } else {
+        params[key] = val;
+      }
+    });
+    return params;
   }
 });

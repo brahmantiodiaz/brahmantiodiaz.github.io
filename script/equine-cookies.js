@@ -1,26 +1,17 @@
-// console.log(visitData.get());
-// // let options = { year: "numeric", month: "numeric", day: "numeric" };
-// // console.log(document.cookie);
-// function getCookie(cname) {
-//   let name = cname + "=";
-//   let decodedCookie = decodeURIComponent(document.cookie);
-//   let ca = decodedCookie.split(";");
-//   for (let i = 0; i < ca.length; i++) {
-//     let c = ca[i];
-//     while (c.charAt(0) == " ") {
-//       c = c.substring(1);
-//     }
-//     if (c.indexOf(name) == 0) {
-//       return c.substring(name.length, c.length);
-//     }
-//   }
-//   return "";
-// }
-// console.log(getCookie("_ga_6QBT1DNHZ6"));
-// let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
-// let ga_session_id = tmpID[2];
-// console.log(ga_session_id);
-// console.log(FRUBIL.device.class);
-// console.log(FRUBIL.client);
-// console.log(FRUBIL.device);
-// console.log(FRUBIL);
+function getParams(url = window.location) {
+  let params = {};
+  new URL(url).searchParams.forEach(function (val, key) {
+    if (params[key] !== undefined) {
+      if (!Array.isArray(params[key])) {
+        params[key] = [params[key]];
+      }
+      params[key].push(val);
+    } else {
+      params[key] = val;
+    }
+  });
+  return params;
+}
+
+let params = getParams();
+console.log(params);
