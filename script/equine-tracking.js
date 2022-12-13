@@ -463,8 +463,9 @@ window.addEventListener("load", (event) => {
   }
 
   async function getCareerData() {
+    // https://script.google.com/macros/s/AKfycbxeAOiMxCvrMZAMedyJ_07q6ZTHvdtICg3MqnI2m4SkwG8mtS3fN2_ZsE6Vn3yz_QMsHg/exec
     let urlSlug =
-      "AKfycbzkBnlvdXMPhcXEX0_XS8TnCSuhwLWrVNUhj5VzL9jHFpaacV30J-eKu5q-K2Z-XRGE/exec";
+      "AKfycbxeAOiMxCvrMZAMedyJ_07q6ZTHvdtICg3MqnI2m4SkwG8mtS3fN2_ZsE6Vn3yz_QMsHg/exec";
     let dataIP = await getIp();
     let data = {
       event: "cflistener",
