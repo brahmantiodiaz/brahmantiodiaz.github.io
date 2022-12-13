@@ -1,4 +1,11 @@
 window.addEventListener("load", (event) => {
+  let params = getParams();
+  if (params) {
+    console.log(params);
+    for (let key in params) {
+      setCookie(key, params[key], 1);
+    }
+  }
   const contactUsform = document.getElementById("contactUsForm");
   let date = new Date();
   const tokenIpInfo = "2fcc5a1ed7a755";
@@ -16,6 +23,10 @@ window.addEventListener("load", (event) => {
   } catch (error) {
     dataSouce = { source: "direct", medium: "none" };
   }
+  if (!getCookie("utm_source") || dataSouce == "google") {
+    setCookie("utm_source", dataSouce.source, 1);
+    setCookie("utm_medium", dataSouce.medium, 1);
+  }
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
     FRUBIL.device.brand +
@@ -26,6 +37,15 @@ window.addEventListener("load", (event) => {
   if (!FRUBIL.device.marketname) {
     fullDeviceName = FRUBIL.client.os + " using " + FRUBIL.client.name;
   }
+
+  //setcookie function
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
   //getcookie funtion
   function getCookie(cname) {
     let name = cname + "=";
@@ -114,9 +134,21 @@ window.addEventListener("load", (event) => {
       device: device,
       fullDeviceName: fullDeviceName,
       ga_session_id: tmpID[2],
-      source: dataSouce.source,
-      medium: dataSouce.medium,
       fullData: JSON.stringify(submitData),
+      utm_campaign: getCookie("utm_campaign")
+        ? getCookie("utm_campaign")
+        : "default",
+      utm_content: getCookie("utm_content")
+        ? getCookie("utm_content")
+        : "default",
+      utm_id: getCookie("utm_id") ? getCookie("utm_id") : "default",
+      utm_medium: getCookie("utm_medium")
+        ? getCookie("utm_medium")
+        : dataSouce.medium,
+      utm_source: getCookie("utm_source")
+        ? getCookie("utm_source")
+        : dataSouce.source,
+      utm_term: getCookie("utm_term") ? getCookie("utm_term") : "default",
     };
     //test
     const scriptURL = "https://script.google.com/macros/s/" + urlSlug;

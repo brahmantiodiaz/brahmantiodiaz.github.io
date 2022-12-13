@@ -24,6 +24,10 @@ window.addEventListener("load", (event) => {
   } catch (error) {
     dataSouce = { source: "direct", medium: "none" };
   }
+  if (!getCookie("utm_source") || dataSouce == "google") {
+    setCookie("utm_source", dataSouce.source, 1);
+    setCookie("utm_medium", dataSouce.medium, 1);
+  }
   let isAdmin = getCookie("name");
   let tmpID = getCookie("_ga_6QBT1DNHZ6").split(".");
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
@@ -408,6 +412,13 @@ window.addEventListener("load", (event) => {
     await sendToSheet(scriptURL, formData);
   }
 
+  function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
   function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -468,7 +479,7 @@ window.addEventListener("load", (event) => {
       "AKfycbxeAOiMxCvrMZAMedyJ_07q6ZTHvdtICg3MqnI2m4SkwG8mtS3fN2_ZsE6Vn3yz_QMsHg/exec";
     let dataIP = await getIp();
     let data = {
-      event: "cflistener",
+      event: "careerFormlistener",
       name: careerName.value,
       email: careerEmail.value,
       phone: careerPhone.value,
