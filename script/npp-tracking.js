@@ -38,6 +38,22 @@ window.addEventListener("load", (event) => {
     fullDeviceName = FRUBIL.client.os + " using " + FRUBIL.client.name;
   }
 
+  //getparams
+  function getParams(url = window.location) {
+    let params = {};
+    new URL(url).searchParams.forEach(function (val, key) {
+      if (params[key] !== undefined) {
+        if (!Array.isArray(params[key])) {
+          params[key] = [params[key]];
+        }
+        params[key].push(val);
+      } else {
+        params[key] = val;
+      }
+    });
+    return params;
+  }
+
   //setcookie function
   function setCookie(cname, cvalue, exdays) {
     const d = new Date();
