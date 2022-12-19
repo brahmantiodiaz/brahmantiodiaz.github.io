@@ -26,6 +26,14 @@ window.addEventListener("load", (event) => {
   if (!getCookie("utm_source") || dataSouce == "google") {
     setCookie("utm_source", dataSouce.source, 1);
     setCookie("utm_medium", dataSouce.medium, 1);
+    setCookie("utm_campaign", "default", 1);
+    setCookie("utm_content", "default", 1);
+    setCookie("utm_id", "default", 1);
+    setCookie("utm_term", "default", 1);
+    if (dataSouce == "google") {
+      setCookie("utm_campaign", "seo", 1);
+      setCookie("utm_content", document.title, 1);
+    }
   }
   let device = FRUBIL.device.class + " " + FRUBIL.client.os;
   let fullDeviceName =
