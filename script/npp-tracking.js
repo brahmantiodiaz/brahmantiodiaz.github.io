@@ -30,7 +30,7 @@ window.addEventListener("load", (event) => {
     setCookie("utm_content", "default", 1);
     setCookie("utm_id", "default", 1);
     setCookie("utm_term", "default", 1);
-    if (dataSouce == "google") {
+    if (dataSouce.source == "google") {
       setCookie("utm_campaign", "seo", 1);
       setCookie("utm_content", document.title, 1);
     }
