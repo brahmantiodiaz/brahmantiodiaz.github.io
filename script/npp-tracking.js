@@ -23,7 +23,7 @@ window.addEventListener("load", (event) => {
   } catch (error) {
     dataSouce = { source: "direct", medium: "none" };
   }
-  if (!getCookie("utm_source") || dataSouce == "google") {
+  if (!getCookie("utm_source") || dataSouce.source == "google") {
     setCookie("utm_source", dataSouce.source, 1);
     setCookie("utm_medium", dataSouce.medium, 1);
     setCookie("utm_campaign", "default", 1);
