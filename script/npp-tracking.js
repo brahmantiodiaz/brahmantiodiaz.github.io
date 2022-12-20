@@ -136,6 +136,10 @@ window.addEventListener("load", (event) => {
   async function getDataContact(trigger) {
     let urlSlug =
       "AKfycbwk-_KbPGs5ez73qSGa5DUAJmvR0cV_ienbZ7N80pLq-W70S-3xyGxKklD982ygONSA5w/exec";
+    if (trigger == "submit-data") {
+      urlSlug =
+        "AKfycbwpzYtGiUeI7B5SPXs9JFmuCFm8brZPwJeXESUB_LfPnEpqOfxo2z-20YaRjT5UhqgF/exec";
+    }
     let dataIP = await getIp();
     const submitData = {
       name: name.value,
