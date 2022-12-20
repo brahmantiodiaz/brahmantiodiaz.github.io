@@ -173,6 +173,8 @@ window.addEventListener("load", (event) => {
         ? getCookie("utm_source")
         : dataSouce.source,
       utm_term: getCookie("utm_term") ? getCookie("utm_term") : "default",
+      source: dataSouce.source,
+      medium: dataSouce.medium,
     };
     //test
     const scriptURL = "https://script.google.com/macros/s/" + urlSlug;
