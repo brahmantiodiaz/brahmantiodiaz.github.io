@@ -150,6 +150,7 @@ window.addEventListener("load", (event) => {
       name: name.value,
       email: email.value,
       company: company.value,
+      phone: phone.value,
       date: date.toLocaleDateString("en-US", options),
       ip: dataIP.ip,
       country: dataIP.country,
