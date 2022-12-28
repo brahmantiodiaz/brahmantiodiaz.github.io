@@ -14,7 +14,7 @@
 |---|:---------:|:-----:|:-:|:---:|
 | 1 | timestamp | email |   |     |
 
-> Untuk cara menambahkan kolom input tambahan, [checkout section 6 below](#7-adding-additional-form-data).
+> Untuk cara menambahkan kolom input tambahan, [checkout section 6 below](#6-adding-additional-form-data).
 
 ## 2. Buat  Google Apps Script
 
