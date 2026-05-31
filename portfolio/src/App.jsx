@@ -539,7 +539,6 @@ function Experience() {
 				<SectionHeader
 					eyebrow="Experience"
 					title="Experience across enterprise systems, web products, and backend services."
-					description="Logos are included from the provided image sources and placed directly in the project assets folder."
 				/>
 
 				<div className="grid gap-6">
